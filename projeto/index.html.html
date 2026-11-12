@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestão de Treinamentos</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
+        nav { background: #1a4d80; padding: 12px 24px; }
+        nav a { color: #fff; margin-right: 18px; text-decoration: none; font-weight: 600; }
+        main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+        .card { background: #fff; border-radius: 8px; padding: 18px; margin-bottom: 18px; box-shadow: 0 1px 3px #0002; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; font-size: 14px; }
+        input, select, textarea { padding: 7px; margin: 4px 0 10px; width: 100%; box-sizing: border-box; }
+        button, .btn { background: #1a4d80; color: #fff; border: 0; padding: 9px 16px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; }
+        .flash { background: #fff3cd; padding: 10px; border-radius: 5px; margin-bottom: 12px; }
+        .row { display: flex; gap: 12px; align-items: end; }
+        .badge { padding: 3px 10px; border-radius: 12px; font-weight: 600; font-size: 13px; }
+        .ok { background: #d4edda; }
+        .warn { background: #fff3cd; }
+        .exp { background: #f8d7da; }
+        .big { font-size: 28px; text-align: center; padding: 24px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Validade</a>
+        <a href="/turmas">Turmas</a>
+        <a href="/cadastro/treinamentos">Treinamentos</a>
+        <a href="/cadastro/instrutores">Instrutores</a>
+        <a href="/cadastro/colaboradores">Colaboradores</a>
+        <a href="/validar">Validar certificado</a>
+        <a href="/logout" style="float:right">Sair (admin)</a>
+    </nav>
+    <main>
+        <div class="card">
+            <h2>Controle de Validade</h2>
+            <form class="row">
+                <div style="flex:2">
+                    <label>Nome ou CPF</label>
+                    <input name="q" value="">
+                </div>
+                <div>
+                    <label>Setor</label>
+                    <select name="setor">
+                        <option value="">Todos</option>
+                        <option>Manutenção</option>
+                        <option>Produção</option>
+                    </select>
+                </div>
+                <button>Filtrar</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <span class="badge ok">🟢 Válidos: 15</span> 
+            <span class="badge warn">🟡 A vencer: 0</span> 
+            <span class="badge exp">🔴 Vencidos: 0</span>
+        </div>
+
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Colaborador</th>
+                    <th>CPF</th>
+                    <th>Setor</th>
+                    <th>Treinamento</th>
+                    <th>Vencimento</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Ana Souza</td>
+                    <td>529.982.247-25</td>
+                    <td>Manutenção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>06/11/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/c29479bb-be04-408a-a7a5-d65c538c9711.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Ana Souza</td>
+                    <td>529.982.247-25</td>
+                    <td>Manutenção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>30/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/d5234919-e84d-4448-a62e-512a0190c2ad.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Ana Souza</td>
+                    <td>529.982.247-25</td>
+                    <td>Manutenção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>23/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/05d3c0c2-f5df-434d-9023-a7459b099f8c.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Ana Souza</td>
+                    <td>529.982.247-25</td>
+                    <td>Manutenção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>16/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/33c6da6f-9bab-4a08-b3a5-50ceadc0ae78.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Ana Souza</td>
+                    <td>529.982.247-25</td>
+                    <td>Manutenção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>09/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/d84c7fdb-4bf5-49aa-b6fe-ffcb7d0e1c03.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Bruno Lima</td>
+                    <td>111.444.777-35</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>06/11/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/cd46d9bc-2e9f-4d6f-ba28-ea88a27855ee.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Bruno Lima</td>
+                    <td>111.444.777-35</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>30/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/e2993afa-8719-4f8e-8cf4-ffe9d6fc0344.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Bruno Lima</td>
+                    <td>111.444.777-35</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>23/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/bc2d4e52-9ac2-43a5-bb05-5f4f8a38ccbb.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Bruno Lima</td>
+                    <td>111.444.777-35</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>16/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/d60b4c34-4bb4-467b-bdcf-e401a23b8777.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Bruno Lima</td>
+                    <td>111.444.777-35</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>09/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/db5f9520-a819-4615-9430-c3dcb89f2493.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Carla Dias</td>
+                    <td>390.533.447-05</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>06/11/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/cd0d9c89-65e4-4943-a83f-058499a52de5.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Carla Dias</td>
+                    <td>390.533.447-05</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>30/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/7e26b981-37dd-4273-ba22-de32d3abdde7.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Carla Dias</td>
+                    <td>390.533.447-05</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>23/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/74300335-4017-4f7c-a39a-43fc84d43c86.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Carla Dias</td>
+                    <td>390.533.447-05</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>16/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/0f2f1c84-8559-44c1-aba0-b42c3026927c.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Carla Dias</td>
+                    <td>390.533.447-05</td>
+                    <td>Produção</td>
+                    <td>NR-35 Trabalho em Altura</td>
+                    <td>09/10/2028</td>
+                    <td><span class="badge ok">🟢 Válido</span></td>
+                    <td><a href="/certificado/9ea53f02-caa3-461c-af3f-de0f029a22c9.pdf">PDF</a></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
